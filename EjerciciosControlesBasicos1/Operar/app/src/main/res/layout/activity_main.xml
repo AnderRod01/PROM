@@ -1,0 +1,100 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtPrimerValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduce el PRIMER valor:"
+        android:textSize="20dp"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <EditText
+        android:id="@+id/num1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtPrimerValor"
+        />
+
+    <TextView
+        android:id="@+id/txtSegundoValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduce el SEGUNDO valor:"
+        android:textSize="20dp"
+        android:layout_margin="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num1"
+        />
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSegundoValor"
+        />
+
+
+
+    <TextView
+        android:id="@+id/suma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado: "
+        android:textSize="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/botonSuma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/num2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="suma"
+        />
+    <Button
+        android:id="@+id/botonResta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/num2"
+        app:layout_constraintLeft_toRightOf="@id/botonSuma"
+        android:onClick="resta"
+        />
+    <Button
+        android:id="@+id/botonMult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/num2"
+        app:layout_constraintLeft_toRightOf="@id/botonResta"
+        android:onClick="multiplicar"
+        />
+    <Button
+        android:id="@+id/botonDiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/num2"
+        app:layout_constraintLeft_toRightOf="@id/botonMult"
+        android:onClick="dividir"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
