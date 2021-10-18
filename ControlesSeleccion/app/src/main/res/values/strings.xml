@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ControlesSeleccion</string>
+    <string-array name="paises">
+        <item>España</item>
+        <item>Francia</item>
+        <item>Alemania</item>
+        <item>Estados Unidos</item>
+        <item>China</item>
+    </string-array>
+</resources>
