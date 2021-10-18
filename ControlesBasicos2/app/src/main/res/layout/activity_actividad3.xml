@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Actividad3">
+
+    <TextView
+        android:id="@+id/lblTitulo_act3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Introduce tus datos:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblNombre_act3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Nombre:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTitulo_act3" />
+
+
+    <EditText
+        android:id="@+id/txtNombre_act3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lblNombre_act3"
+        app:layout_constraintStart_toStartOf="@+id/txtApellidos_act3"
+        app:layout_constraintTop_toTopOf="@+id/lblNombre_act3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <TextView
+        android:id="@+id/lblApellidos_act3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Apellidos: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNombre_act3" />
+
+    <EditText
+        android:id="@+id/txtApellidos_act3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lblApellidos_act3"
+        app:layout_constraintStart_toEndOf="@+id/lblApellidos_act3"
+        app:layout_constraintTop_toTopOf="@+id/lblApellidos_act3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/lblSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Sexo:"
+        app:layout_constraintStart_toStartOf="@+id/lblApellidos_act3"
+        app:layout_constraintTop_toBottomOf="@+id/txtApellidos_act3" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupSexo"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        app:layout_constraintStart_toEndOf="@+id/lblSexo"
+        app:layout_constraintTop_toBottomOf="@+id/txtApellidos_act3">
+
+        <RadioButton
+            android:id="@+id/rbtnMasculino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masculino" />
+
+        <RadioButton
+            android:id="@+id/rbtnFemenino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Femenino" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/lblAficiones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aficiones:"
+        app:layout_constraintStart_toStartOf="@+id/lblSexo"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupSexo" />
+
+    <CheckBox
+        android:id="@+id/chkboxMusica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Musica"
+        app:layout_constraintStart_toEndOf="@+id/lblAficiones"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupSexo" />
+
+    <CheckBox
+        android:id="@+id/chkboxLectura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lectura"
+        app:layout_constraintStart_toStartOf="@+id/chkboxMusica"
+        app:layout_constraintTop_toBottomOf="@+id/chkboxMusica" />
+
+    <CheckBox
+        android:id="@+id/chkboxDeporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deportes"
+        app:layout_constraintStart_toStartOf="@+id/chkboxLectura"
+        app:layout_constraintTop_toBottomOf="@+id/chkboxLectura" />
+
+    <CheckBox
+        android:id="@+id/chkboxViajar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Viajar"
+        app:layout_constraintStart_toStartOf="@+id/chkboxDeporte"
+        app:layout_constraintTop_toBottomOf="@+id/chkboxDeporte" />
+
+    <Button
+        android:id="@+id/btnEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="150dp"
+        android:text="Enviar"
+        android:onClick="enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
