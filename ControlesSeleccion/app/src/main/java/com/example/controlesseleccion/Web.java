@@ -5,12 +5,12 @@ import android.widget.ImageView;
 public class Web {
 
     private String nombre, url, id;
-    private ImageView img;
+    private int idDrawable;
 
-    public Web (String nombre, String url, ImageView img, String id){
+    public Web (String nombre, String url, int idDrawable, String id){
         this.nombre=nombre;
         this.url=url;
-        this.img=img;
+        this.idDrawable=idDrawable;
         this.id=id;
     }
 
@@ -18,8 +18,8 @@ public class Web {
         return nombre;
     }
 
-    public ImageView getImg() {
-        return img;
+    public int getidDrawable() {
+        return idDrawable;
     }
 
     public String getId() {
