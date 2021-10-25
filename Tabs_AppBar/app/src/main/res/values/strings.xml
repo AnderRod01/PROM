@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Tabs_AppBar</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="nuevoGrupo">Nuevo grupo</string>
+    <string name="nuevaDifusion">Nueva difusion</string>
+    <string name="dispositivosVinculados">Dispositivos vinculados</string>
+    <string name="mensajesDestacados">Mensajes Destacados</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">WhatsApp</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="tab1">Chats</string>
+    <string name="tab2">Estados</string>
+    <string name="tab3">Llamadas</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

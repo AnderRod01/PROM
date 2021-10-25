@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.tabs_appbar.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/nuevoGrupo"
+        android:title="@string/nuevoGrupo"
+        />
+    <item
+        android:id="@+id/nuevaDifu"
+        android:title="@string/nuevaDifusion"
+        />
+    <item
+        android:id="@+id/dispVinculados"
+        android:title="@string/dispositivosVinculados"
+        />
+    <item
+        android:id="@+id/msgDestacados"
+        android:title="@string/mensajesDestacados"
+        />
+    <item android:id="@+id/action_buscar"
+        android:title="Buscar"
+        android:icon="@drawable/search"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+
+
+</menu>
