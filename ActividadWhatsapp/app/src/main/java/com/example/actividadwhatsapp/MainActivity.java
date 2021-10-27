@@ -1,56 +1,95 @@
-package com.example.tabs_appbar;
-
-import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
+package com.example.actividadwhatsapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.LayoutInflater;
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.tabs_appbar.databinding.ActivityMainBinding;
-import com.google.android.material.tabs.TabLayout;
-
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.google.android.material.tabs.TabLayout;
+
 public class MainActivity extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+    private MenuItem mnItem_NuevoGrupo;
+    private MenuItem mnItem_NuevaDifu;
+    private MenuItem mnItem_Dispositivos;
+    private MenuItem mnItem_MsgDestacados;
+    private MenuItem mnItem_PrivEstados;
+    private MenuItem mnItem_borrarLlamadas;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_main);
 
         ViewPager viewPager =  findViewById(R.id.viewpager);
         viewPager.setAdapter(new PageAdapter());
 
-        TabLayout tabLayout = findViewById(R.id.tabLayout);
+
+        tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setTabMode(tabLayout.MODE_FIXED);
         tabLayout.setupWithViewPager(viewPager);
 
 
+        mnItem_NuevoGrupo = (MenuItem) findViewById(R.id.nuevoGrupo);
+        mnItem_NuevaDifu = (MenuItem) findViewById(R.id.nuevaDifu);
+        mnItem_Dispositivos = (MenuItem) findViewById(R.id.dispVinculados);
+        mnItem_MsgDestacados = (MenuItem) findViewById(R.id.msgDestacados);
+        mnItem_PrivEstados = (MenuItem) findViewById(R.id.privEstados);
+        mnItem_borrarLlamadas  =(MenuItem) findViewById(R.id.borrarLlamadas);
 
-        setSupportActionBar(binding.toolbar);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()){
+                    case 0:
+//                        mnItem_NuevoGrupo.setVisible(true);
+//                        mnItem_NuevaDifu.setVisible(true);
+//                        mnItem_Dispositivos.setVisible(true);
+//                        mnItem_MsgDestacados.setVisible(true);
+//                        mnItem_PrivEstados.setVisible(false);
+//                        mnItem_borrarLlamadas.setVisible(false);
+                        break;
+                    case 1:
+//                        mnItem_NuevoGrupo.setVisible(false);
+//                        mnItem_NuevaDifu.setVisible(false);
+//                        mnItem_Dispositivos.setVisible(false);
+//                        mnItem_MsgDestacados.setVisible(false);
+//                        mnItem_PrivEstados.setVisible(true);
+//                        mnItem_borrarLlamadas.setVisible(false);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+                        break;
+                    default:
+//                        mnItem_NuevoGrupo.setVisible(false);
+//                        mnItem_NuevaDifu.setVisible(false);
+//                        mnItem_Dispositivos.setVisible(false);
+//                        mnItem_MsgDestacados.setVisible(false);
+//                        mnItem_PrivEstados.setVisible(false);
+//                        mnItem_borrarLlamadas.setVisible(true);
+                }
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
 
     }
@@ -62,27 +101,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
     class PageAdapter extends PagerAdapter {
 
         private LinearLayout tab1;
@@ -95,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
             return 3;
         }
 
+        @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
             String s = getString(TABS[position]);

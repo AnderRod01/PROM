@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ActividadWhatsapp</string>
+    <string name="tab1">Chats</string>
+    <string name="tab2">Estados</string>
+    <string name="tab3">Llamadas</string>
+
+    <string name="action_settings">Ajustes</string>
+    <string name="nuevoGrupo">Nuevo grupo</string>
+    <string name="nuevaDifusion">Nueva difusion</string>
+    <string name="dispositivosVinculados">Dispositivos vinculados</string>
+    <string name="mensajesDestacados">Mensajes Destacados</string>
+
+    <string name="privEstados">Privacidad de estados</string>
+
+    <string name="borrarLlamadas">Borrar registro de llamadas</string>
+</resources>
