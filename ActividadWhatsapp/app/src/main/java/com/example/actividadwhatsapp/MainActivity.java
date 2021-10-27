@@ -6,13 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem mnItem_PrivEstados;
     private MenuItem mnItem_borrarLlamadas;
     private TabLayout tabLayout;
+    private ListView lvChats;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,35 +53,39 @@ public class MainActivity extends AppCompatActivity {
         mnItem_PrivEstados = (MenuItem) findViewById(R.id.privEstados);
         mnItem_borrarLlamadas  =(MenuItem) findViewById(R.id.borrarLlamadas);
 
+        lvChats = (ListView) findViewById(R.id.lvChats);
+        rellenarLista();
+
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()){
                     case 0:
-//                        mnItem_NuevoGrupo.setVisible(true);
-//                        mnItem_NuevaDifu.setVisible(true);
-//                        mnItem_Dispositivos.setVisible(true);
-//                        mnItem_MsgDestacados.setVisible(true);
-//                        mnItem_PrivEstados.setVisible(false);
-//                        mnItem_borrarLlamadas.setVisible(false);
+                        mnItem_NuevoGrupo.setVisible(true);
+                        mnItem_NuevaDifu.setVisible(true);
+                        mnItem_Dispositivos.setVisible(true);
+                        mnItem_MsgDestacados.setVisible(true);
+                        mnItem_PrivEstados.setVisible(false);
+                        mnItem_borrarLlamadas.setVisible(false);
                         break;
                     case 1:
-//                        mnItem_NuevoGrupo.setVisible(false);
-//                        mnItem_NuevaDifu.setVisible(false);
-//                        mnItem_Dispositivos.setVisible(false);
-//                        mnItem_MsgDestacados.setVisible(false);
-//                        mnItem_PrivEstados.setVisible(true);
-//                        mnItem_borrarLlamadas.setVisible(false);
+                        mnItem_NuevoGrupo.setVisible(false);
+                        mnItem_NuevaDifu.setVisible(false);
+                        mnItem_Dispositivos.setVisible(false);
+                        mnItem_MsgDestacados.setVisible(false);
+                        mnItem_PrivEstados.setVisible(true);
+                        mnItem_borrarLlamadas.setVisible(false);
 
 
                         break;
                     default:
-//                        mnItem_NuevoGrupo.setVisible(false);
-//                        mnItem_NuevaDifu.setVisible(false);
-//                        mnItem_Dispositivos.setVisible(false);
-//                        mnItem_MsgDestacados.setVisible(false);
-//                        mnItem_PrivEstados.setVisible(false);
-//                        mnItem_borrarLlamadas.setVisible(true);
+                        mnItem_NuevoGrupo.setVisible(false);
+                        mnItem_NuevaDifu.setVisible(false);
+                        mnItem_Dispositivos.setVisible(false);
+                        mnItem_MsgDestacados.setVisible(false);
+                        mnItem_PrivEstados.setVisible(false);
+                        mnItem_borrarLlamadas.setVisible(true);
                 }
 
             }
@@ -94,12 +104,61 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    private void rellenarLista(){
+        final Chat[] CHATS = {new Chat("Juan", "Como estas?", "12:32"),
+                new Chat("Eskalope", "Quien eres?", "13:45"),
+                new Chat("Guillem", "Hola furro", "13:26")
+        };
+
+        AdaptadorTitulares adaptadorTitulares = new AdaptadorTitulares(this, CHATS);
+        lvChats.setAdapter(adaptadorTitulares);
+
+    }
+
+
+
+    class AdaptadorTitulares extends ArrayAdapter<Chat> {
+
+        private Chat[] datos;
+
+        public AdaptadorTitulares(@NonNull Context context, Chat[] datos) {
+            super(context, R.layout.listitem_chats, datos);
+            this.datos=datos;
+        }
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView,
+                            @NonNull ViewGroup parent) {
+            LayoutInflater inflater = LayoutInflater.from(getContext());
+            View item = inflater.inflate(R.layout.listitem_chats, null);
+
+            TextView lblTitulo = (TextView)item.findViewById(R.id.lblNombre);
+            lblTitulo.setText(datos[position].getNombre());
+
+            TextView lblSubtitulo = (TextView)item.findViewById(R.id.lblMensaje);
+            lblSubtitulo.setText(datos[position].getMensaje());
+
+            TextView lblHora = (TextView)item.findViewById(R.id.lblHora);
+            lblHora.setText(datos[position].getMensaje());
+
+            ImageView img = (ImageView) item.findViewById(R.id.img);
+            img.setImageDrawable(getDrawable(R.drawable.icon));
+
+            return (item);
+        }
+    }
+
+
 
     class PageAdapter extends PagerAdapter {
 
