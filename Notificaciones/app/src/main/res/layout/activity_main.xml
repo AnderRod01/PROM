@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Actividad2">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/lblTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SUMA"
+        android:text="RESUELVE LA SIGUIENTE OPERACION:"
         android:layout_margin="20dp"
-        android:textSize="25dp"
+        android:textSize="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -28,11 +28,10 @@
         app:layout_constraintTop_toBottomOf="@id/lblTitulo" />
 
     <TextView
-        android:id="@+id/plus"
+        android:id="@+id/lblSimbolo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="+"
         app:layout_constraintEnd_toStartOf="@+id/txtNum2"
         app:layout_constraintLeft_toRightOf="@id/txtNum1"
         app:layout_constraintTop_toBottomOf="@id/lblTitulo" />
@@ -74,7 +73,7 @@
         android:onClick="comprobar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plus"/>
+        app:layout_constraintTop_toBottomOf="@id/lblSimbolo"/>
 
     <TextView
         android:id="@+id/lblCorrectas"
@@ -83,6 +82,7 @@
         android:layout_margin="20dp"
         android:text="PREGUNTAS CORRECTAS: "
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnComprobar"
         />
 
@@ -96,25 +96,6 @@
         app:layout_constraintLeft_toRightOf="@id/lblCorrectas"
         />
 
-    <TextView
-        android:id="@+id/lblNumIncorrectas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="0"
-        app:layout_constraintTop_toBottomOf="@+id/btnComprobar"
-        app:layout_constraintLeft_toRightOf="@id/lblIncorrectas"
-        />
-
-    <TextView
-        android:id="@+id/lblIncorrectas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="INCORRECTAS: "
-        app:layout_constraintLeft_toRightOf="@id/lblCorrectas"
-        app:layout_constraintTop_toBottomOf="@id/btnComprobar"
-        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
