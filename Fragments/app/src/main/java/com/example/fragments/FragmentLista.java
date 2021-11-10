@@ -85,7 +85,12 @@ public class FragmentLista extends Fragment {
             ImageView imgPortada = (ImageView) item.findViewById(R.id.imgPortada);
             imgPortada.setImageDrawable(getResources().getDrawable(datos[position].getImg()));
 
-            return super.getView(position, convertView, parent);
+            return item;
         }
     }
+
+    public void setLibroListener (LibroListener listener){
+        this.listener = listener;
+    }
+
 }

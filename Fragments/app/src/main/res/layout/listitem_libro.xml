@@ -30,6 +30,10 @@
         android:id="@+id/imgPortada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/imperiofinal"
+        android:maxHeight="300px"
+        android:maxWidth="300px"
+        android:adjustViewBounds="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         />
