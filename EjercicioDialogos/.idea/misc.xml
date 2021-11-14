@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Ander/AndroidStudioProjects/EjercicioDialogos/app/src/main/res/layout/activity_main.xml" value="0.3532608695652174" />
+        <entry key="..\:/Users/Ander/AndroidStudioProjects/EjercicioDialogos/app/src/main/res/layout/dialogo_login.xml" value="0.3532608695652174" />
+        <entry key="..\:/Users/Ander/AndroidStudioProjects/EjercicioDialogos/app/src/main/res/layout/fragment_item_list.xml" value="0.3532608695652174" />
         <entry key="app/src/main/res/layout/dialogo_login.xml" value="0.365625" />
       </map>
     </option>
