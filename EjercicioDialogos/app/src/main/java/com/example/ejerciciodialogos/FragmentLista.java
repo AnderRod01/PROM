@@ -19,7 +19,11 @@ import android.widget.TextView;
 
 public class FragmentLista extends Fragment {
 
-    private Menu [] datos = new Menu[] {};
+    private Menu [] datos = new Menu[] {new Menu("Menu Jayce", R.string.menuJayce, R.drawable.jayce, true),
+                                        new Menu("Menu Jinx", R.string.menuJinx, R.drawable.jinx, true),
+                                        new Menu("Menu Vi", R.string.menuVi, R.drawable.vi, true),
+                                        new Menu("Menu Vander", R.string.menuVander, R.drawable.vander, false),
+                                        new Menu("Menu Silco", R.string.menuSilco, R.drawable.silco, false)};
 
     private ListView lstMenu;
     private MenuListener listener;

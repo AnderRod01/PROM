@@ -1,13 +1,15 @@
 package com.example.ejerciciodialogos;
 
 public class Menu {
-    private String nombre, desc;
-    private int img;
+    private String nombre;
+    private int img, desc;
+    private boolean carne;
 
-    public Menu (String nombre, String desc, int img){
+    public Menu (String nombre, int desc, int img, boolean carne){
         this.nombre=nombre;
         this.desc=desc;
         this.img=img;
+        this.carne = carne;
     }
 
     public String getNombre() {
@@ -18,7 +20,7 @@ public class Menu {
         return img;
     }
 
-    public String getDesc() {
+    public int getDesc() {
         return desc;
     }
 

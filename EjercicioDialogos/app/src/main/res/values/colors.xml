@@ -7,6 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="principal">#ffb833</color>
-    <color name="seleccionado">#c2410a</color>
+    <color name="principal">#e0a224</color>
+    <color name="seleccionado">#ff3c19</color>
+    <color name="fondo">#ffd69c</color>
+    <color name="letraOscura">#1c0a00</color>
+    <color name="letraClara">#ededed</color>
 </resources>
