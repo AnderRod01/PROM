@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/letraClara">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/seleccionado"/>
+        android:layout_margin="50dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="1000px"
+        android:src="@drawable/logo_burger_king"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"/>
-</LinearLayout>
+    <TextView
+        android:id="@+id/lblTipoPedido"
+        style="@style/Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="Donde quieres tu pedido?"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+    <RadioGroup
+        android:id="@+id/rdGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTipoPedido">
+
+        <RadioButton
+            android:id="@+id/rdMasculino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A domicilio"
+            android:layout_marginRight="15dp"
+            style="@style/Texto"/>
+
+        <RadioButton
+            android:id="@+id/rdFemenino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Para recoger"
+            style="@style/Texto"/>
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

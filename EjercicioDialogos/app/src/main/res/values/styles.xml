@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Texto">
-        <item name="android:textSize">15dp</item>
-        <item name="android:typeface">monospace</item>
-        <item name="android:gravity">center</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">@color/letraOscura</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
     <style name="lista">
         <item name="android:textSize">17dp</item>
