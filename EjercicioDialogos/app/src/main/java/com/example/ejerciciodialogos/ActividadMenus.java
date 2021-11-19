@@ -24,13 +24,10 @@ import com.google.android.material.tabs.TabLayout;
 
 public class ActividadMenus extends AppCompatActivity {
 
-    private Menu[] datos = new Menu[]{new Menu("Menu Jayce", R.string.menuJayce, R.drawable.jayce, true),
-            new Menu("Menu Jinx", R.string.menuJinx, R.drawable.jinx, true),
-            new Menu("Menu Vi", R.string.menuVi, R.drawable.vi, true),
-            new Menu("Menu Vander", R.string.menuVander, R.drawable.vander, false),
-            new Menu("Menu Silco", R.string.menuSilco, R.drawable.silco, false)};
+    private Menu[] datos;
 
-    private ListView lstMenu;
+    private ListView lstCarne;
+    private ListView lstVegetariano;
     private MenuListener listener;
     private TabLayout tabLayout;
 
@@ -39,44 +36,39 @@ public class ActividadMenus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_menus);
 
+
+        ImageView jayce = new ImageView(this);
+        jayce.setImageResource(R.drawable.jayce);
+
+        ImageView jinx = new ImageView(this);
+        jinx.setImageResource(R.drawable.jinx);
+
+        ImageView vi = new ImageView(this);
+        vi.setImageResource(R.drawable.vi);
+
+        ImageView vander = new ImageView(this);
+        vander.setImageResource(R.drawable.vander);
+
+        ImageView silco = new ImageView(this);
+        silco.setImageResource(R.drawable.silco);
+
+        datos = new Menu[]{new Menu("Menu Jayce", R.string.menuJayce, jayce),
+                new Menu("Menu Jinx", R.string.menuJinx, jinx),
+                new Menu("Menu Vi", R.string.menuVi,vi),
+                new Menu("Menu Vander", R.string.menuVander, vander),
+                new Menu("Menu Silco", R.string.menuSilco,silco)};
+
+
+
         ViewPager viewPager= findViewById(R.id.viewpager);
         viewPager.setAdapter(new PageAdapter());
+
         tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setTabMode(tabLayout.MODE_FIXED);
         tabLayout.setupWithViewPager(viewPager);
 
-
-
-
-
-
     }
 
-    class AdaptadorMenu extends ArrayAdapter<Menu> {
-        private Activity context;
-
-        public AdaptadorMenu(@NonNull Context context, Menu [] datos) {
-            super(context, R.layout.listitem_menu, datos);
-
-            //AYUDA
-            this.context=context;
-        }
-
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater inflater = context.getLayoutInflater();
-            View item = inflater.inflate(R.layout.listitem_menu, null);
-
-            TextView lblMenu = (TextView) item.findViewById(R.id.lblMenu);
-            lblMenu.setText(datos[position].getNombre());
-
-            ImageView img = (ImageView) item.findViewById(R.id.img);
-            img.setImageDrawable(getResources().getDrawable(datos[position].getImg()));
-
-            return item;
-        }
-    }
 
     public void setMenuListener(MenuListener listener) {
         this.listener = listener;
@@ -105,16 +97,18 @@ public class ActividadMenus extends AppCompatActivity {
         public Object instantiateItem(@NonNull ViewGroup container, int position) {
             View page;
             switch(position){
-                case 0:
+                case 1:
 
                     if (tab1 == null) {
                         tab1 = (ConstraintLayout) LayoutInflater.from(ActividadMenus.this).inflate(R.layout.tab1, container, false);
-                        AdaptadorMenu adaptadorMenu = new AdaptadorMenu(tab1.getContext(), datos);
-                        lstMenu = (ListView) tab1.findViewById(R.id.lstCarne);
-                        lstMenu.setAdapter(adaptadorMenu);
-                    }
 
+                    }
                     page = tab1;
+                    AdaptadorCarne adaptadorCarne = new AdaptadorCarne(tab1.getContext(), datos);
+
+                    lstCarne = tab1.findViewById(R.id.lstCarne);
+
+                    lstCarne.setAdapter(adaptadorCarne);
                     break;
                 default:
                     if (tab2 == null) {

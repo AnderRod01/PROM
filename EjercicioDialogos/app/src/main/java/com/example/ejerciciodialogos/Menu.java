@@ -1,22 +1,24 @@
 package com.example.ejerciciodialogos;
 
+import android.widget.ImageView;
+
 public class Menu {
     private String nombre;
-    private int img, desc;
-    private boolean carne;
+    private int desc;
+    private ImageView img;
 
-    public Menu (String nombre, int desc, int img, boolean carne){
+
+    public Menu (String nombre, int desc, ImageView img){
         this.nombre=nombre;
         this.desc=desc;
         this.img=img;
-        this.carne = carne;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public int getImg() {
+    public ImageView getImg() {
         return img;
     }
 
