@@ -3,11 +3,24 @@ package com.example.ejerciciodialogos;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDialogoInicioSesion, DialogoSalir.OnDialogoCerrar{
 
     private static final String USER = "usuario1", PSWD = "123456";
+    private Button btnPedido;
+    private EditText txtDireccion;
+    private RadioGroup rdGroup;
+    private RadioButton rBtnDomicilio, rBtnRecoger;
+    private TextView lblDireccion;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +30,41 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
         FragmentManager fm = getSupportFragmentManager();
         DialogoLogin dialogoLogin = new DialogoLogin();
         dialogoLogin.show(fm, "tagLogin");
+
+        btnPedido = (Button) findViewById(R.id.btnPedido);
+
+        rdGroup = (RadioGroup) findViewById(R.id.rdGroup);
+        rBtnDomicilio = (RadioButton) findViewById(R.id.rdDomicilio);
+        rBtnRecoger = (RadioButton) findViewById(R.id.rdRecoger);
+
+        lblDireccion = (TextView) findViewById(R.id.lblDireccion);
+        txtDireccion = (EditText) findViewById(R.id.txtDireccion);
+
+
+
+        btnPedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(MainActivity.this, ActividadMenus.class);
+                startActivity(intent);
+            }
+        });
+
+        rdGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (radioGroup.getCheckedRadioButtonId() == R.id.rdDomicilio){
+                    lblDireccion.setVisibility(View.VISIBLE);
+                    txtDireccion.setVisibility(View.VISIBLE);
+                    btnPedido.setEnabled(true);
+                }else{
+                    lblDireccion.setVisibility(View.INVISIBLE);
+                    txtDireccion.setVisibility(View.INVISIBLE);
+                    btnPedido.setEnabled(true);
+                }
+            }
+        });
+
     }
 
     public void onBackPressed() {

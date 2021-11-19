@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:text="Usuario: "
-        android:textSize="20dp"
+        style="@style/Subtitulo"
         app:layout_constraintBottom_toBottomOf="@+id/txtUsuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtUsuario" />
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:text="Contraseña: "
-        android:textSize="20dp"
+        style="@style/Subtitulo"
         app:layout_constraintBottom_toBottomOf="@+id/txtContrasenia"
         app:layout_constraintTop_toTopOf="@id/txtContrasenia"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="15dp"
         android:text="usuario1"
+        style="@style/Texto"
         android:layout_marginTop="15dp"
         app:layout_constraintLeft_toLeftOf="@id/txtContrasenia"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:text="123456"
+        style="@style/Texto"
         android:inputType="textPassword"
         app:layout_constraintLeft_toRightOf="@id/lblContrasenia"
         app:layout_constraintTop_toBottomOf="@id/lblUsuario" />

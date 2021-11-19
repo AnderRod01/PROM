@@ -13,6 +13,7 @@ import androidx.fragment.app.DialogFragment;
 public class DialogoSalir extends DialogFragment {
     private OnDialogoCerrar listener;
 
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);

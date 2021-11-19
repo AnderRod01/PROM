@@ -5,4 +5,6 @@
     <string name="menuVi">La echabas de menos y aquí está, ¡vuelve la mejor combinación con los puños de VI! Con dos de nuestras carnes más jugosas y justicieras a la parrilla, el doble de queso cheddar para hacer el bien, el doble de bacon para aumentar tu poder, tomate fresco y salsa para dañar torretas, y cebolla crujiente para tirarlas. ¡Hasta el pan con bacon es de Piltover!</string>
     <string name="menuVander">100% Vegetal y 100% sabor Long Chicken. Si te mola el Long Chicken, pero no tanto la carne, serás como Vander en su idea de progreso al futuro. El mismo pan alargado de semillas, lechuga y mayonesa, es el culmen del científico en la búsqueda del sabor. ¡No notarás la diferencia!</string>
     <string name="menuSilco">100% Whopper. 100% Vegetal. Si eres cero de carne mucho de plantas serás como Silco que vive en Zaun como las raíces nutriéndose de Piltover. Tenemos el Whopper de toda la vida pero hecho de plantas. Eso sí, a la parrilla con el fuego que mantiene a la ciudad. ¿Sabrás diferenciarlo?.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
