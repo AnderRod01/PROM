@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:text="aaaa"
-        app:layout_constraintBottom_toBottomOf="@+id/img"
-        app:layout_constraintStart_toEndOf="@+id/img"
-        app:layout_constraintTop_toTopOf="@+id/img" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgMenu"
+        app:layout_constraintStart_toEndOf="@+id/imgMenu"
+        app:layout_constraintTop_toTopOf="@+id/imgMenu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
