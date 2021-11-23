@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
     private RadioGroup rdGroup;
     private RadioButton rBtnDomicilio, rBtnRecoger;
     private TextView lblDireccion;
+    private String direccion = "";
 
 
     @Override
@@ -40,13 +41,18 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
         lblDireccion = (TextView) findViewById(R.id.lblDireccion);
         txtDireccion = (EditText) findViewById(R.id.txtDireccion);
 
+        if (rBtnDomicilio.isChecked()){
+            direccion = txtDireccion.getText().toString();
+        }
 
 
         btnPedido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(MainActivity.this, ActividadMenus.class);
+                intent.putExtra("direccion", direccion);
                 startActivity(intent);
+                
             }
         });
 

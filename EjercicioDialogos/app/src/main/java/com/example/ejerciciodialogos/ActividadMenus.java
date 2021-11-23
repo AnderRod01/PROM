@@ -4,13 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -26,34 +30,21 @@ public class ActividadMenus extends AppCompatActivity {
     private ListView lstVegetariano;
     private MenuListener listener;
     private TabLayout tabLayout;
-
+    private String direccion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_menus);
 
+        datosCarne = new Menu[]{new Menu("Menu Jayce", R.string.menuJayce, R.drawable.jayce),
+                new Menu("Menu Jinx", R.string.menuJinx, R.drawable.jinx),
+                new Menu("Menu Vi", R.string.menuVi,R.drawable.vi)};
 
-        ImageView jayce = new ImageView(this);
-        jayce.setImageResource(R.drawable.jayce);
+        datosVeg =new Menu[]{ new Menu("Menu Vander", R.string.menuVander, R.drawable.vander),
+                new Menu("Menu Silco", R.string.menuSilco,R.drawable.silco)};
 
-        ImageView jinx = new ImageView(this);
-        jinx.setImageResource(R.drawable.jinx);
-
-        ImageView vi = new ImageView(this);
-        vi.setImageResource(R.drawable.vi);
-
-        ImageView vander = new ImageView(this);
-        vander.setImageResource(R.drawable.vander);
-
-        ImageView silco = new ImageView(this);
-        silco.setImageResource(R.drawable.silco);
-
-        datosCarne = new Menu[]{new Menu("Menu Jayce", R.string.menuJayce, jayce),
-                new Menu("Menu Jinx", R.string.menuJinx, jinx),
-                new Menu("Menu Vi", R.string.menuVi,vi)};
-
-        datosVeg =new Menu[]{ new Menu("Menu Vander", R.string.menuVander, vander),
-                new Menu("Menu Silco", R.string.menuSilco,silco)};
+        Bundle datos =  getIntent().getExtras();
+        direccion = datos.getString("direccion");
 
         ViewPager viewPager= findViewById(R.id.viewpager);
         viewPager.setAdapter(new PageAdapter());
@@ -107,6 +98,22 @@ public class ActividadMenus extends AppCompatActivity {
                     lstCarne = (ListView) tab1.findViewById(R.id.lstCarne);
 
                     lstCarne.setAdapter(adaptadorCarne);
+
+
+                    lstCarne.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            Menu m= (Menu) adapterView.getItemAtPosition(i);
+                            System.out.println(direccion);
+                            Intent intent = new Intent(ActividadMenus.this, ActividadDescripcion.class);
+                            intent.putExtra("imagen", m.getImg());
+                            intent.putExtra("desc", m.getDesc());
+                            //intent.putExtra("direccion", direccion);
+                            startActivity(intent);
+
+                            finish();
+                        }
+                    });
                     break;
                 default:
                     if (tab2 == null) {
@@ -118,6 +125,21 @@ public class ActividadMenus extends AppCompatActivity {
                     lstVegetariano = (ListView) tab2.findViewById(R.id.lstVegetariana);
 
                     lstVegetariano.setAdapter(adaptadorMenus);
+
+                    lstVegetariano.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            Menu m= (Menu) adapterView.getItemAtPosition(i);
+                            System.out.println(direccion);
+                            Intent intent = new Intent(ActividadMenus.this, ActividadDescripcion.class);
+                            intent.putExtra("imagen", m.getImg());
+                            intent.putExtra("desc", m.getDesc());
+                            //intent.putExtra("direccion", direccion);
+                            startActivity(intent);
+
+                            finish();
+                        }
+                    });
                     break;
             }
             container.addView(page, 0);

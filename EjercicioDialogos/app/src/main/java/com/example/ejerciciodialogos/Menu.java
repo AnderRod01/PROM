@@ -5,10 +5,10 @@ import android.widget.ImageView;
 public class Menu {
     private String nombre;
     private int desc;
-    private ImageView img;
+    private int img;
 
 
-    public Menu (String nombre, int desc, ImageView img){
+    public Menu (String nombre, int desc, int img){
         this.nombre=nombre;
         this.desc=desc;
         this.img=img;
@@ -18,7 +18,7 @@ public class Menu {
         return nombre;
     }
 
-    public ImageView getImg() {
+    public int getImg() {
         return img;
     }
 

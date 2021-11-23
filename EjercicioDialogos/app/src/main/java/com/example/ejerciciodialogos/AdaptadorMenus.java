@@ -38,7 +38,7 @@ public class AdaptadorMenus extends ArrayAdapter<Menu> {
         lblMenu.setText(datos[position].getNombre());
 
         ImageView img = (ImageView) item.findViewById(R.id.imgMenu);
-        img.setImageDrawable(datos[position].getImg().getDrawable());
+        img.setImageDrawable(item.getResources().getDrawable(datos[position].getImg()));
 
         return item;
     }
