@@ -60,6 +60,7 @@
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:inputType="number"
         app:layout_constraintLeft_toRightOf="@id/igual"
         app:layout_constraintTop_toBottomOf="@id/lblTitulo"
         />
