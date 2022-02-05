@@ -1,8 +1,16 @@
 package com.example.actividadficheros1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -10,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,119 +29,39 @@ import java.io.OutputStreamWriter;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText txtEscribir;
-    private Button btnAniadirInt, btnAniadirExt, btnLeerInt,
-            btnLeerExt, btnBorrarInt, btnBorrarExt, btnLeerRec;
-
-    private TextView lblContenido;
+    private Button ej1, ej2, ej3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnAniadirInt = (Button) findViewById(R.id.btnAniadirInt);
-        btnLeerInt = (Button) findViewById(R.id.btnLeerInt);
-        btnBorrarInt = (Button) findViewById(R.id.btnBorrarInt);
-
-        btnAniadirExt = (Button) findViewById(R.id.btnAniadirExt);
-        btnLeerExt = (Button) findViewById(R.id.btnLeerExt);
-        btnBorrarExt = (Button) findViewById(R.id.btnBorrarExt);
-
-        btnLeerRec = (Button) findViewById(R.id.btnLeerRec);
-
-        txtEscribir = (EditText) findViewById(R.id.txtContenido);
-        lblContenido = (TextView) findViewById(R.id.lblContenido);
+        Button ej1 = findViewById(R.id.btnEjercicio1);
+        Button ej2 = findViewById(R.id.btnEjercicio2);
+        Button ej3 = findViewById(R.id.btnEjercicio3);
 
 
-
-        btnAniadirInt.setOnClickListener(new View.OnClickListener() {
+        ej1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
-                    OutputStreamWriter osw=
-                            new OutputStreamWriter(openFileOutput("prueba_int.txt",
-                                    Context.MODE_APPEND));
-                    osw.write(txtEscribir.getText() + "\n");
-                    osw.close();
-                }
-                catch (Exception e) {
-                    Log.e("Ficheros", "ERROR!! al escribir fichero en memoria interna");
-                }
+                Intent intent = new Intent(MainActivity.this, Ejercicio1.class);
+                startActivity(intent);
             }
         });
 
-        btnLeerInt.setOnClickListener(new View.OnClickListener() {
+        ej2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, Ejercicio2.class);
+                startActivity(intent);
             }
         });
 
-        btnBorrarInt.setOnClickListener(new View.OnClickListener() {
+        ej3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-            }
-        });
-
-        btnLeerRec.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-
-        btnAniadirExt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try{
-                    File ruta_sd = getApplicationContext().getExternalFilesDir(null);
-
-                    File f = new File (ruta_sd.getAbsolutePath(),"Ficheros1_SD.txt");
-                    OutputStreamWriter osw =
-                            new OutputStreamWriter(new FileOutputStream(f, true));
-
-                    osw.write(txtEscribir.getText() + "\n");
-                    osw.close();
-                    Log.i ("Ficheros", "fichero escrito correctamente");
-                }
-                catch (Exception ex){
-                    Log.e ("Ficheros", "Error al escribir fichero en tarjeta SD");
-                }
-
-            }
-        });
-
-        btnLeerExt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    File ruta_sd = getApplicationContext().getExternalFilesDir(null);
-
-                    File f= new File(ruta_sd.getAbsolutePath(), "Ficheros1_SD.txt");
-                    BufferedReader br = new BufferedReader(
-                            new InputStreamReader(new FileInputStream(f)));
-                    String linea= br.readLine();
-                    String texto = "";
-                    while (linea !=null){
-                        texto = texto + linea + "\n";
-                        Log.i("Ficheros", linea);
-                        linea=br.readLine();
-                    }
-                    br.close();
-                    lblContenido.setText(texto);
-                }catch (Exception ex){
-                    Log.e("Ficheros", "ERROR!! en la lectura del fichero en SD");
-                }
-            }
-        });
-
-        btnBorrarExt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, Ejercicio3.class);
+                startActivity(intent);
             }
         });
 

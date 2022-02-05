@@ -6,118 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/lblEscribir"
+    <Button
+        android:id="@+id/btnEjercicio1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contenido a escribir:"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_margin="20dp"
+        android:text="ejercicio1"
+        app:layout_constraintBottom_toTopOf="@id/btnEjercicio2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtContenido"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:layout_constraintTop_toBottomOf="@id/lblEscribir"/>
-
-
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="15dp"
+        />
     <Button
-        android:id="@+id/btnAniadirInt"
+        android:id="@+id/btnEjercicio2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:text="Añadir Fich. Int."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtContenido" />
+        android:text="ejercicio2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
     <Button
-        android:id="@+id/btnAniadirExt"
+        android:id="@+id/btnEjercicio3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="Añadir Fich. Ext."
-        app:layout_constraintStart_toEndOf="@+id/btnAniadirInt"
-        app:layout_constraintTop_toBottomOf="@+id/txtContenido" />
-
-    <Button
-        android:id="@+id/btnLeerInt"
-        android:layout_width="110dp"
-        android:layout_height="65dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="leer FIch. Int."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAniadirInt" />
-
-    <Button
-        android:id="@+id/btnLeerExt"
-        android:layout_width="110dp"
-        android:layout_height="65dp"
-        android:text="Leer Fich. Ext."
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintStart_toEndOf="@+id/btnLeerInt"
-        app:layout_constraintTop_toBottomOf="@+id/btnAniadirInt" />
-
-    <Button
-        android:id="@+id/btnLeerRec"
-        android:layout_width="110dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="Leer Recurso"
-        app:layout_constraintStart_toEndOf="@+id/btnLeerExt"
-        app:layout_constraintTop_toBottomOf="@+id/btnAniadirExt" />
-
-    <Button
-        android:id="@+id/btnBorrarInt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Borrar FIch. Int."
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLeerInt" />
-
-    <Button
-        android:id="@+id/btnBorrarExt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Borrar Fich. Ext."
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintStart_toEndOf="@+id/btnBorrarInt"
-        app:layout_constraintTop_toBottomOf="@+id/btnLeerExt" />
-
-    <TextView
-        android:id="@+id/lblTituloCont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="El contenido del fichero es:"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/btnBorrarExt"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <TextView
-        android:id="@+id/lblContenido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/lblTituloCont"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-
+        android:text="ejercicio3"
+        app:layout_constraintTop_toBottomOf="@id/btnEjercicio2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="15dp"
+        />
 
 
 
